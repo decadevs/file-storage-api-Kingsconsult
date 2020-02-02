@@ -9,6 +9,7 @@ urlpatterns = [
     path('<post>/', views.CreateBucket.as_view()),
     path('<int:pk>/put/', views.UpdateBucket.as_view()),
     path('<int:pk>/', views.BucketDetail.as_view()),
+    path('<int:pk>/del/', views.DeleteBucket.as_view()),
 ]
 
 # # Normal view (hard way to write view)
