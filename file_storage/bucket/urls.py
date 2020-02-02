@@ -7,7 +7,7 @@ app_name = 'buckets'
 urlpatterns = [
     path('', views.BucketList.as_view()),
     path('<post>/', views.CreateBucket.as_view()),
-
+    path('<int:pk>/put/', views.UpdateBucket.as_view()),
 ]
 
 # # Normal view (hard way to write view)
