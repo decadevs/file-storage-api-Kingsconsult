@@ -23,3 +23,14 @@ class BucketDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Bucket.objects.all()
     serializer_class = serializers.BucketSerializer
     
+class DeleteBucket(generics.RetrieveDestroyAPIView):
+    queryset = models.Bucket.objects.all()
+    serializer_class = serializers.BucketSerializer
+    
+    
+    
+# class BucketView(APIView):
+#     def get(self, request):
+#         buckets = models.Bucket.objects.all()
+#         return Response({"buckets": buckets})
+
