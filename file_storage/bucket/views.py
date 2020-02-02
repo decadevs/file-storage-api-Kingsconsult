@@ -7,3 +7,6 @@ from . import models
 from .serializers import BucketSerializer
 from . import serializers
 
+class BucketList(generics.ListAPIView):
+    queryset = models.Bucket.objects.all()
+    serializer_class = serializers.BucketSerializer
