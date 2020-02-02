@@ -6,6 +6,7 @@ from . import views
 app_name = 'buckets'
 urlpatterns = [
     path('', views.BucketList.as_view()),
+    path('<post>/', views.CreateBucket.as_view()),
 
 ]
 
