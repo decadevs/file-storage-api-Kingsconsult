@@ -10,3 +10,7 @@ from . import serializers
 class BucketList(generics.ListAPIView):
     queryset = models.Bucket.objects.all()
     serializer_class = serializers.BucketSerializer
+    
+class CreateBucket(generics.ListCreateAPIView):
+    queryset = models.Bucket.objects.all()
+    serializer_class = serializers.BucketSerializer
