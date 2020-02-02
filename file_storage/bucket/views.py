@@ -18,3 +18,8 @@ class CreateBucket(generics.ListCreateAPIView):
 class UpdateBucket(generics.RetrieveUpdateAPIView):
     queryset = models.Bucket.objects.all()
     serializer_class = serializers.BucketSerializer
+    
+class BucketDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Bucket.objects.all()
+    serializer_class = serializers.BucketSerializer
+    
