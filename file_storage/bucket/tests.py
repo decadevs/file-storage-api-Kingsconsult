@@ -33,7 +33,7 @@ class ViewTestCase(TestCase):
     def test_api_can_get_a_bucket(self):
         """Test the api can get a given bucket."""
         bucket = Bucket.objects.all()
-        response = self.client.get(reverse('BucketDetail',
+        response = self.client.get(reverse('detail',
             kwargs={'pk': bucket[0]['id']}), format="json")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -44,7 +44,7 @@ class ViewTestCase(TestCase):
         bucket = Bucket.objects.get()
         change_bucket = {'name': 'Something new'}
         res = self.client.put(
-            reverse('BucketDetail', kwargs={'pk': bucket.id}),
+            reverse('update', kwargs={'pk': bucket.id}),
             change_bucket, format='json'
         )
         self.assertEqual(res.status_code, status.HTTP_200_OK)
@@ -53,7 +53,7 @@ class ViewTestCase(TestCase):
         """Test the api can delete a bucketlist."""
         bucket = Bucket.objects.get()
         response = self.client.delete(
-            reverse('details', kwargs={'pk': bucket.id}),
+            reverse('delete', kwargs={'pk': bucket.id}),
             format='json',
             follow=True)
 

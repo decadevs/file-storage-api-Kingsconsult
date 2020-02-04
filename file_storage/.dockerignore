@@ -1,0 +1,4 @@
+bucket_env/
+Dockerfile
+.git
+.gitignore
