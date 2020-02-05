@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Running tests
           command: |
-            . bucket_env/Scripts/activate
+            . venv/bin/activate
             python manage.py test
 
       - store_test_results:
