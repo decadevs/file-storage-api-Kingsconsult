@@ -20,7 +20,7 @@ jobs:
           name: Running tests
           command: |
             . bucket_env/Scripts/activate
-            python file_storage/manage.py test
+            python manage.py test
 
       - store_test_results:
           path: test-results
